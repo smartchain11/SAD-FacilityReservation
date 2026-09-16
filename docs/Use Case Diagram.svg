@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 950 700" font-family="Segoe UI, system-ui, sans-serif">
+  <defs>
+    <style>
+      .title { font-size: 18px; font-weight: 700; fill: #1e293b; }
+      .actor-text { font-size: 12px; fill: #1e293b; font-weight: 600; text-anchor: middle; }
+      .usecase { fill: #eef2ff; stroke: #4f46e5; stroke-width: 1.5; }
+      .usecase-text { font-size: 11px; fill: #1e293b; text-anchor: middle; }
+      .actor-line { stroke: #1e293b; stroke-width: 1.5; }
+      .assoc { stroke: #64748b; stroke-width: 1; }
+      .system-box { fill: none; stroke: #4f46e5; stroke-width: 2; stroke-dasharray: 8,4; rx: 12; }
+      .system-label { font-size: 14px; font-weight: 700; fill: #4f46e5; }
+    </style>
+  </defs>
+
+  <text x="475" y="30" text-anchor="middle" class="title">Use Case Diagram — Facility Reservation System</text>
+
+  <!-- System boundary -->
+  <rect x="200" y="50" width="550" height="620" class="system-box"/>
+  <text x="475" y="75" text-anchor="middle" class="system-label">Facility Reservation System</text>
+
+  <!-- ACTORS -->
+  <!-- Administrator -->
+  <g transform="translate(80, 180)">
+    <circle cx="0" cy="0" r="15" fill="none" stroke="#1e293b" stroke-width="2"/>
+    <line x1="0" y1="15" x2="0" y2="45" class="actor-line"/>
+    <line x1="-20" y1="28" x2="20" y2="28" class="actor-line"/>
+    <line x1="0" y1="45" x2="-15" y2="65" class="actor-line"/>
+    <line x1="0" y1="45" x2="15" y2="65" class="actor-line"/>
+    <text x="0" y="85" class="actor-text">Administrator</text>
+  </g>
+
+  <!-- Facility Staff -->
+  <g transform="translate(80, 430)">
+    <circle cx="0" cy="0" r="15" fill="none" stroke="#1e293b" stroke-width="2"/>
+    <line x1="0" y1="15" x2="0" y2="45" class="actor-line"/>
+    <line x1="-20" y1="28" x2="20" y2="28" class="actor-line"/>
+    <line x1="0" y1="45" x2="-15" y2="65" class="actor-line"/>
+    <line x1="0" y1="45" x2="15" y2="65" class="actor-line"/>
+    <text x="0" y="85" class="actor-text">Facility Staff</text>
+  </g>
+
+  <!-- Requester -->
+  <g transform="translate(870, 350)">
+    <circle cx="0" cy="0" r="15" fill="none" stroke="#1e293b" stroke-width="2"/>
+    <line x1="0" y1="15" x2="0" y2="45" class="actor-line"/>
+    <line x1="-20" y1="28" x2="20" y2="28" class="actor-line"/>
+    <line x1="0" y1="45" x2="-15" y2="65" class="actor-line"/>
+    <line x1="0" y1="45" x2="15" y2="65" class="actor-line"/>
+    <text x="0" y="85" class="actor-text">Requester</text>
+  </g>
+
+  <!-- USE CASES -->
+  <!-- Shared: Login -->
+  <ellipse cx="475" cy="105" rx="90" ry="22" class="usecase"/>
+  <text x="475" y="110" class="usecase-text">Login / Logout</text>
+
+  <!-- Shared: View Dashboard -->
+  <ellipse cx="475" cy="155" rx="90" ry="22" class="usecase"/>
+  <text x="475" y="160" class="usecase-text">View Dashboard</text>
+
+  <!-- Admin: Manage Facilities -->
+  <ellipse cx="370" cy="210" rx="100" ry="22" class="usecase"/>
+  <text x="370" y="215" class="usecase-text">Manage Facilities (CRUD)</text>
+
+  <!-- Admin: Approve Reservation -->
+  <ellipse cx="370" cy="265" rx="100" ry="22" class="usecase"/>
+  <text x="370" y="270" class="usecase-text">Approve Reservation</text>
+
+  <!-- Admin: Reject Reservation -->
+  <ellipse cx="370" cy="320" rx="100" ry="22" class="usecase"/>
+  <text x="370" y="325" class="usecase-text">Reject Reservation</text>
+
+  <!-- Admin: View Audit Logs -->
+  <ellipse cx="370" cy="375" rx="100" ry="22" class="usecase"/>
+  <text x="370" y="380" class="usecase-text">View Audit Logs</text>
+
+  <!-- Staff: View Reservations -->
+  <ellipse cx="370" cy="440" rx="100" ry="22" class="usecase"/>
+  <text x="370" y="445" class="usecase-text">View Reservations</text>
+
+  <!-- Staff: Confirm Usage (In Use) -->
+  <ellipse cx="370" cy="495" rx="110" ry="22" class="usecase"/>
+  <text x="370" y="500" class="usecase-text">Confirm Facility Usage</text>
+
+  <!-- Staff: Record Completion -->
+  <ellipse cx="370" cy="550" rx="100" ry="22" class="usecase"/>
+  <text x="370" y="555" class="usecase-text">Record Completion</text>
+
+  <!-- Staff: Update Condition -->
+  <ellipse cx="370" cy="605" rx="110" ry="22" class="usecase"/>
+  <text x="370" y="610" class="usecase-text">Update Facility Condition</text>
+
+  <!-- Requester: View Facilities -->
+  <ellipse cx="600" cy="265" rx="90" ry="22" class="usecase"/>
+  <text x="600" y="270" class="usecase-text">View Facilities</text>
+
+  <!-- Requester: Submit Reservation -->
+  <ellipse cx="600" cy="320" rx="100" ry="22" class="usecase"/>
+  <text x="600" y="325" class="usecase-text">Submit Reservation</text>
+
+  <!-- Requester: View Status -->
+  <ellipse cx="600" cy="375" rx="100" ry="22" class="usecase"/>
+  <text x="600" y="380" class="usecase-text">View Reservation Status</text>
+
+  <!-- Requester: Cancel Request -->
+  <ellipse cx="600" cy="430" rx="110" ry="22" class="usecase"/>
+  <text x="600" y="435" class="usecase-text">Cancel Own Pending Request</text>
+
+  <!-- Requester: View History -->
+  <ellipse cx="600" cy="485" rx="90" ry="22" class="usecase"/>
+  <text x="600" y="490" class="usecase-text">View History</text>
+
+  <!-- ASSOCIATION LINES -->
+  <!-- Admin associations -->
+  <line x1="110" y1="180" x2="385" y2="105" class="assoc"/>
+  <line x1="110" y1="180" x2="385" y2="155" class="assoc"/>
+  <line x1="110" y1="180" x2="270" y2="210" class="assoc"/>
+  <line x1="110" y1="180" x2="270" y2="265" class="assoc"/>
+  <line x1="110" y1="180" x2="270" y2="320" class="assoc"/>
+  <line x1="110" y1="200" x2="270" y2="375" class="assoc"/>
+
+  <!-- Staff associations -->
+  <line x1="110" y1="430" x2="385" y2="105" class="assoc"/>
+  <line x1="110" y1="430" x2="385" y2="155" class="assoc"/>
+  <line x1="110" y1="430" x2="270" y2="440" class="assoc"/>
+  <line x1="110" y1="430" x2="260" y2="495" class="assoc"/>
+  <line x1="110" y1="430" x2="270" y2="550" class="assoc"/>
+  <line x1="110" y1="440" x2="260" y2="605" class="assoc"/>
+
+  <!-- Requester associations -->
+  <line x1="840" y1="350" x2="565" y2="105" class="assoc"/>
+  <line x1="840" y1="350" x2="565" y2="155" class="assoc"/>
+  <line x1="840" y1="350" x2="690" y2="265" class="assoc"/>
+  <line x1="840" y1="350" x2="700" y2="320" class="assoc"/>
+  <line x1="840" y1="350" x2="700" y2="375" class="assoc"/>
+  <line x1="840" y1="360" x2="710" y2="430" class="assoc"/>
+  <line x1="840" y1="365" x2="690" y2="485" class="assoc"/>
+</svg>

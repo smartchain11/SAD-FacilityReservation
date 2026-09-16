@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 650" font-family="Segoe UI, system-ui, sans-serif">
+  <defs>
+    <style>
+      .title { font-size: 18px; font-weight: 700; fill: #1e293b; }
+      .table-header { fill: #4f46e5; }
+      .table-header-text { font-size: 13px; font-weight: 700; fill: #fff; }
+      .field { font-size: 11px; fill: #334155; }
+      .field-type { font-size: 10px; fill: #64748b; }
+      .pk { font-size: 10px; fill: #dc2626; font-weight: 700; }
+      .fk { font-size: 10px; fill: #2563eb; font-weight: 700; }
+      .rel-line { stroke: #64748b; stroke-width: 1.5; fill: none; }
+      .rel-text { font-size: 10px; fill: #64748b; }
+    </style>
+  </defs>
+
+  <text x="450" y="30" text-anchor="middle" class="title">Entity Relationship Diagram — Facility Reservation System</text>
+
+  <!-- PROFILES TABLE -->
+  <g transform="translate(30, 60)">
+    <rect x="0" y="0" width="180" height="30" rx="6" ry="6" class="table-header"/>
+    <text x="90" y="20" text-anchor="middle" class="table-header-text">profiles</text>
+    <rect x="0" y="30" width="180" height="90" rx="0" ry="0" fill="#fff" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="10" y="50" class="field"><tspan class="pk">PK</tspan> id <tspan class="field-type">UUID</tspan></text>
+    <text x="10" y="70" class="field">role <tspan class="field-type">TEXT</tspan></text>
+    <text x="10" y="90" class="field">created_at <tspan class="field-type">TIMESTAMPTZ</tspan></text>
+  </g>
+
+  <!-- FACILITIES TABLE -->
+  <g transform="translate(30, 260)">
+    <rect x="0" y="0" width="200" height="30" rx="6" ry="6" class="table-header"/>
+    <text x="100" y="20" text-anchor="middle" class="table-header-text">facilities</text>
+    <rect x="0" y="30" width="200" height="210" rx="0" ry="0" fill="#fff" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="10" y="50" class="field"><tspan class="pk">PK</tspan> id <tspan class="field-type">BIGINT</tspan></text>
+    <text x="10" y="70" class="field">facility_name <tspan class="field-type">TEXT</tspan></text>
+    <text x="10" y="90" class="field">facility_type <tspan class="field-type">TEXT</tspan></text>
+    <text x="10" y="110" class="field">capacity <tspan class="field-type">INTEGER</tspan></text>
+    <text x="10" y="130" class="field">location <tspan class="field-type">TEXT</tspan></text>
+    <text x="10" y="150" class="field">description <tspan class="field-type">TEXT</tspan></text>
+    <text x="10" y="170" class="field">status <tspan class="field-type">TEXT</tspan></text>
+    <text x="10" y="190" class="field">created_at <tspan class="field-type">TIMESTAMPTZ</tspan></text>
+  </g>
+
+  <!-- RESERVATIONS TABLE -->
+  <g transform="translate(340, 170)">
+    <rect x="0" y="0" width="230" height="30" rx="6" ry="6" class="table-header"/>
+    <text x="115" y="20" text-anchor="middle" class="table-header-text">reservations</text>
+    <rect x="0" y="30" width="230" height="330" rx="0" ry="0" fill="#fff" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="10" y="50" class="field"><tspan class="pk">PK</tspan> id <tspan class="field-type">BIGINT</tspan></text>
+    <text x="10" y="70" class="field"><tspan class="fk">FK</tspan> facility_id <tspan class="field-type">BIGINT</tspan></text>
+    <text x="10" y="90" class="field">requester_name <tspan class="field-type">TEXT</tspan></text>
+    <text x="10" y="110" class="field">department <tspan class="field-type">TEXT</tspan></text>
+    <text x="10" y="130" class="field">purpose <tspan class="field-type">TEXT</tspan></text>
+    <text x="10" y="150" class="field">start_datetime <tspan class="field-type">TIMESTAMPTZ</tspan></text>
+    <text x="10" y="170" class="field">end_datetime <tspan class="field-type">TIMESTAMPTZ</tspan></text>
+    <text x="10" y="190" class="field">status <tspan class="field-type">TEXT</tspan></text>
+    <text x="10" y="210" class="field"><tspan class="fk">FK</tspan> approved_by <tspan class="field-type">UUID</tspan></text>
+    <text x="10" y="230" class="field">approved_at <tspan class="field-type">TIMESTAMPTZ</tspan></text>
+    <text x="10" y="250" class="field"><tspan class="fk">FK</tspan> user_id <tspan class="field-type">UUID</tspan></text>
+    <text x="10" y="270" class="field">created_at <tspan class="field-type">TIMESTAMPTZ</tspan></text>
+  </g>
+
+  <!-- AUDIT_LOGS TABLE -->
+  <g transform="translate(680, 170)">
+    <rect x="0" y="0" width="200" height="30" rx="6" ry="6" class="table-header"/>
+    <text x="100" y="20" text-anchor="middle" class="table-header-text">audit_logs</text>
+    <rect x="0" y="30" width="200" height="190" rx="0" ry="0" fill="#fff" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="10" y="50" class="field"><tspan class="pk">PK</tspan> id <tspan class="field-type">BIGINT</tspan></text>
+    <text x="10" y="70" class="field">action <tspan class="field-type">TEXT</tspan></text>
+    <text x="10" y="90" class="field">target_table <tspan class="field-type">TEXT</tspan></text>
+    <text x="10" y="110" class="field">target_id <tspan class="field-type">BIGINT</tspan></text>
+    <text x="10" y="130" class="field">details <tspan class="field-type">TEXT</tspan></text>
+    <text x="10" y="150" class="field"><tspan class="fk">FK</tspan> performed_by <tspan class="field-type">UUID</tspan></text>
+    <text x="10" y="170" class="field">performed_at <tspan class="field-type">TIMESTAMPTZ</tspan></text>
+  </g>
+
+  <!-- RELATIONSHIPS -->
+  <!-- facilities 1:N reservations -->
+  <path d="M 230 370 L 340 300" class="rel-line" marker-end="url(#arrow)"/>
+  <text x="270" y="320" class="rel-text">1:N</text>
+
+  <!-- profiles -> reservations (user_id) -->
+  <path d="M 210 120 L 340 370" class="rel-line" stroke-dasharray="5,3"/>
+  <text x="250" y="240" class="rel-text">user_id</text>
+
+  <!-- profiles -> audit_logs (performed_by) -->
+  <path d="M 210 100 L 680 310" class="rel-line" stroke-dasharray="5,3"/>
+  <text x="450" y="180" class="rel-text">performed_by</text>
+
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#64748b"/>
+    </marker>
+  </defs>
+</svg>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Audit Logs | Facility Reservation System</title>
+  <meta name="description" content="Audit trail for the Facility Reservation System" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">🏢</span> Facility Reservation System
+    </div>
+    <div class="topbar-right">
+      <span class="user-chip" id="user-name"></span>
+      <button class="btn btn-outline btn-sm" onclick="logout()">Logout</button>
+    </div>
+  </header>
+
+  <nav class="nav" id="main-nav"></nav>
+
+  <main>
+    <div class="page-head">
+      <h2>Audit Logs</h2>
+    </div>
+
+    <div class="card">
+      <div class="toolbar">
+        <input type="search" id="search-input" placeholder="Search logs..." />
+        <select id="filter-action">
+          <option value="">Action: All</option>
+          <option value="SUBMIT">Submit</option>
+          <option value="APPROVE">Approve</option>
+          <option value="REJECT">Reject</option>
+          <option value="CANCEL">Cancel</option>
+          <option value="STATUS_CHANGE">Status Change</option>
+          <option value="COMPLETE">Complete</option>
+          <option value="CREATE">Create</option>
+          <option value="UPDATE">Update</option>
+          <option value="DELETE">Delete</option>
+        </select>
+      </div>
+      <div id="loading" class="loading"><div class="spinner"></div>Loading audit logs...</div>
+      <div class="table-wrap" id="table-wrap" style="display:none;">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Action</th>
+              <th>Table</th>
+              <th>Record ID</th>
+              <th>Details</th>
+              <th>Performed At</th>
+            </tr>
+          </thead>
+          <tbody id="audit-tbody"></tbody>
+        </table>
+      </div>
+      <div id="empty-state" class="empty" style="display:none;">No audit logs found.</div>
+    </div>
+  </main>
+
+  <div id="toast-wrap"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/config.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/audit-logs.js"></script>
+</body>
+</html>
