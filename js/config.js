@@ -4,8 +4,8 @@
 // credentials found in: Project Settings → API
 // ============================================================
 
-const SUPABASE_URL = "https://YOUR-PROJECT-REF.supabase.co";
-const SUPABASE_ANON_KEY = "YOUR-ANON-PUBLIC-KEY";
+const SUPABASE_URL = "https://xbngjebfemyjminokllk.supabase.co";
+const SUPABASE_ANON_KEY = "sb_publishable_tWEry3NJKmK_2spHZWQ73g_ZncKnqno";
 
-// Initialize Supabase client
-const SUPABASE = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+// Do not modify below this line
+const SUPABASE = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
