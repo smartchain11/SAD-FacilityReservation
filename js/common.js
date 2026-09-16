@@ -25,6 +25,12 @@ async function loadProfile() {
 function isAdmin() { return currentRole === "administrator"; }
 function isStaff() { return currentRole === "facility_staff"; }
 function isRequester() { return currentRole === "requester"; }
+function isOfficer() { return currentRole === "officer"; }
+function isBorrower() { return currentRole === "borrower"; }
+// Officers have same privileges as Admin for this system
+function canApprove() { return isAdmin() || isOfficer(); }
+function canManageFacilities() { return isAdmin() || isOfficer(); }
+function canConfirmUsage() { return isStaff() || isAdmin() || isOfficer(); }
 
 // ---------- Toast ----------
 function showToast(message, type = "success") {
@@ -104,6 +110,8 @@ function roleBadge(role) {
     administrator: "Administrator",
     facility_staff: "Facility Staff",
     requester: "Requester",
+    officer: "Officer",
+    borrower: "Borrower",
   };
   return `<span class="role-badge ${role}">${labels[role] || role}</span>`;
 }
@@ -113,6 +121,8 @@ function roleLabel(role) {
     administrator: "Administrator",
     facility_staff: "Facility Staff",
     requester: "Requester",
+    officer: "Officer",
+    borrower: "Borrower",
   };
   return labels[role] || role;
 }
